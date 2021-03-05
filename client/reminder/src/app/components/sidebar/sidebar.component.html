@@ -1,0 +1,20 @@
+<h5>My Lists</h5>
+
+
+<ul class="lists-item-list" #taskListRef>
+  <li
+    *ngFor="let item of taskItems"
+    [routerLink]="['/tasks', item._id ]"
+    routerLinkActive="active"
+  >
+  <list-item [item]="item"></list-item>
+
+
+  </li>
+</ul>
+<div class="edit-form" *ngIf="editing">
+  <i data-feather="list"></i>
+  <input type="text" #dynamicInput autofocus (blur)="editing = false" (keyup.enter)="onEnter(dynamicInput.value)" >
+</div>
+
+<button (click)="addItem()"> add item</button>

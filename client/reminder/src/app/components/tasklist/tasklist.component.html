@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <div class="tasklist-wrap">
+        <div class="sidebar-wrap">
+          <app-sidebar [taskItems]=taskListItems (onTaskListCreate)='onTaskListCreate($event)'></app-sidebar>
+        </div>
+        <div class="all-tasks">
+          <h2 class="heading">{{selectedTaskId?.title}}</h2>
+        </div>
+    </div>
+</div>
